@@ -18,6 +18,13 @@ const nextConfig = {
       bodySizeLimit: '10mb',
     },
   },
+  // Skip static generation for API routes during build
+  output: 'standalone',
+  // Handle build-time errors gracefully
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
 }
 
 module.exports = nextConfig
