@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import EventCountdown from '@/components/event-countdown'
 import { formatDate, formatDateTime } from '@/lib/utils'
+import Image from 'next/image'
 
 interface Event {
   id: string
@@ -139,10 +140,11 @@ export default function Events() {
                 <Card className="glass-dark h-full flex flex-col">
                   {event.image && (
                     <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
-                      <img
+                      <Image
                         src={event.image}
                         alt={locale === 'ar' ? event.titleAr : event.titleEn}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                   )}
