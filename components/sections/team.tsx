@@ -21,6 +21,7 @@ interface TeamMember {
   linkedin?: string | null
   github?: string | null
   twitter?: string | null
+  isActive?: boolean
 }
 
 export default function Team() {
